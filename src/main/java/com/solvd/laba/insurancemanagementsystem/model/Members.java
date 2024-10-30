@@ -1,19 +1,29 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
 import com.solvd.laba.insurancemanagementsystem.constants.AgeGroup;
+import com.solvd.laba.insurancemanagementsystem.xml.AgeGroupAdapter;
 
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
 
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+@XmlRootElement(name = "member")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Members {
+    @XmlAttribute(name = "id")
     private Integer memberId;
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNum;
     private Date dateOfBirth;
+    @XmlElementRef(name = "primaryAddress", type = Addresses.class)
     private Addresses address;
+    @XmlElement(name = "age_group")
+    @XmlJavaTypeAdapter(AgeGroupAdapter.class)
     private AgeGroup ageGroup;
 
     public Integer getMemberId() { return memberId; }
