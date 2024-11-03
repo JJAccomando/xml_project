@@ -41,7 +41,7 @@ public class PolicyTypeService {
 
     public Map<Integer, PolicyType> getAllPolicyTypes() throws DAOException {
         try {
-            return policyTypeDAO.getPoliciesMap();
+            return policyTypeDAO.getMap();
         } catch (DAOException e) {
             throw new DAOException(e.getMessage());
         }

@@ -12,5 +12,4 @@ public interface MembersDAO extends GenericDAO<Members, Integer> {
 
     Members findByPhoneNum(String phoneNum) throws DAOException;
 
-    Map<Integer, Members> getMembersMap() throws DAOException;
 }

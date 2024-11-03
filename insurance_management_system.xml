@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<insurance_management_system>
+    <members>
+        <member id="1">
+            <first_name>John</first_name>
+            <last_name>Smith</last_name>
+            <email>johnsmith@example.com</email>
+            <phone_number>1111111111</phone_number>
+            <date_of_birth>1978-04-10</date_of_birth>
+            <primary_address id="1">
+                <building_number>2243</building_number>
+                <street>1st Fake Street</street>
+                <city>1st Fake City</city>
+                <state>1st Fake State</state>
+                <country>United States</country>
+                <postal_code>55551</postal_code>
+            </primary_address>
+            <age_group id="4">
+                <group_label>adult</group_label>
+            </age_group>
+        </member>
+        <member id="2">
+            <first_name>Jane</first_name>
+            <last_name>Doe</last_name>
+            <email>janesmith@example.com</email>
+            <phone_number>2111111111</phone_number>
+            <date_of_birth>1985-12-31</date_of_birth>
+            <primary_address id="2">
+                <building_number>1498</building_number>
+                <unit_number>14</unit_number>
+                <street>2nd Fake Street</street>
+                <city>2nd Fake City</city>
+                <country>United Kingdom</country>
+                <postal_code>55552</postal_code>
+            </primary_address>
+            <age_group id="4">
+                <group_label>adult</group_label>
+            </age_group>
+        </member>
+        <member id="3">
+            <first_name>Emma</first_name>
+            <last_name>Johnson</last_name>
+            <email>emma.johnson@example.com</email>
+            <phone_number>3111111111</phone_number>
+            <date_of_birth>1992-10-24</date_of_birth>
+            <primary_address id="1">
+                <building_number>2243</building_number>
+                <street>1st Fake Street</street>
+                <city>1st Fake City</city>
+                <state>1st Fake State</state>
+                <country>United States</country>
+                <postal_code>55551</postal_code>
+            </primary_address>
+            <age_group id="4">
+                <group_label>adult</group_label>
+            </age_group>
+        </member>
+        <member id="4">
+            <first_name>Lucas</first_name>
+            <last_name>Brown</last_name>
+            <email>lucasbrown12@example.com</email>
+            <phone_number>4111111111</phone_number>
+            <date_of_birth>1951-06-05</date_of_birth>
+            <primary_address id="3">
+                <building_number>4</building_number>
+                <street>Updated Fake Street</street>
+                <city>3rd Fake City</city>
+                <state>California</state>
+                <country>United States</country>
+                <postal_code>55553</postal_code>
+            </primary_address>
+            <age_group id="5">
+                <group_label>senior</group_label>
+            </age_group>
+        </member>
+        <member id="5">
+            <first_name>Sophia</first_name>
+            <last_name>Martinez</last_name>
+            <email>sophiamartinez@example.com</email>
+            <phone_number>5111111111</phone_number>
+            <date_of_birth>2001-02-10</date_of_birth>
+            <primary_address id="4">
+                <building_number>935</building_number>
+                <street>4th Fake Street</street>
+                <city>4th Fake City</city>
+                <state>2nd Fake State</state>
+                <country>Mexico</country>
+                <postal_code>55554</postal_code>
+            </primary_address>
+            <age_group id="3">
+                <group_label>young_adult</group_label>
+            </age_group>
+        </member>
+    </members>
+    <agents>
+        <agent id="1">
+            <first_name>James</first_name>
+            <last_name>Douglas</last_name>
+            <email>james.douglas@insurancecompany.com</email>
+            <phone_number>5551231234</phone_number>
+        </agent>
+        <agent id="2">
+            <first_name>Ophelia</first_name>
+            <last_name>Kirk</last_name>
+            <email>ophelia.kirk@insurancecompany.com</email>
+            <phone_number>5551234123</phone_number>
+        </agent>
+        <agent id="3">
+            <first_name>Andrew</first_name>
+            <last_name>Goldman</last_name>
+            <email>andrew.goldman@insurancecompany.com</email>
+            <phone_number>5551234512</phone_number>
+        </agent>
+        <agent id="4">
+            <first_name>Kaitlyn</first_name>
+            <last_name>Leapold</last_name>
+            <email>kaitlyn.leapold@insurancecompany.com</email>
+            <phone_number>5551234561</phone_number>
+        </agent>
+        <agent id="5">
+            <first_name>George</first_name>
+            <last_name>Anderson</last_name>
+            <email>george.anderson@insurancecompany.com</email>
+            <phone_number>5551234568</phone_number>
+        </agent>
+        <agent id="6">
+            <first_name>Mitchell</first_name>
+            <last_name>Moore</last_name>
+            <email>michell.moore@insurancecompany.com</email>
+            <phone_number>5551234568</phone_number>
+        </agent>
+    </agents>
+    <banking_information>
+        <member_banking_information id="1">
+            <card_number>5555555555555551</card_number>
+            <card_type>Visa</card_type>
+            <billing_address id="1">
+                <building_number>2243</building_number>
+                <street>1st Fake Street</street>
+                <city>1st Fake City</city>
+                <state>1st Fake State</state>
+                <country>United States</country>
+                <postal_code>55551</postal_code>
+            </billing_address>
+            <banking_member id="1">
+                <first_name>John</first_name>
+                <last_name>Smith</last_name>
+                <email>johnsmith@example.com</email>
+                <phone_number>1111111111</phone_number>
+                <date_of_birth>1978-04-10</date_of_birth>
+                <primary_address id="1">
+                    <building_number>2243</building_number>
+                    <street>1st Fake Street</street>
+                    <city>1st Fake City</city>
+                    <state>1st Fake State</state>
+                    <country>United States</country>
+                    <postal_code>55551</postal_code>
+                </primary_address>
+                <age_group id="4">
+                    <group_label>adult</group_label>
+                </age_group>
+            </banking_member>
+        </member_banking_information>
+        <member_banking_information id="2">
+            <card_number>5555555555555552</card_number>
+            <card_type>Mastercard</card_type>
+            <billing_address id="2">
+                <building_number>1498</building_number>
+                <unit_number>14</unit_number>
+                <street>2nd Fake Street</street>
+                <city>2nd Fake City</city>
+                <country>United Kingdom</country>
+                <postal_code>55552</postal_code>
+            </billing_address>
+            <banking_member id="2">
+                <first_name>Jane</first_name>
+                <last_name>Doe</last_name>
+                <email>janesmith@example.com</email>
+                <phone_number>2111111111</phone_number>
+                <date_of_birth>1985-12-31</date_of_birth>
+                <primary_address id="2">
+                    <building_number>1498</building_number>
+                    <unit_number>14</unit_number>
+                    <street>2nd Fake Street</street>
+                    <city>2nd Fake City</city>
+                    <country>United Kingdom</country>
+                    <postal_code>55552</postal_code>
+                </primary_address>
+                <age_group id="4">
+                    <group_label>adult</group_label>
+                </age_group>
+            </banking_member>
+        </member_banking_information>
+        <member_banking_information id="3">
+            <card_number>5555555555555553</card_number>
+            <card_type>Mastercard</card_type>
+            <billing_address id="1">
+                <building_number>2243</building_number>
+                <street>1st Fake Street</street>
+                <city>1st Fake City</city>
+                <state>1st Fake State</state>
+                <country>United States</country>
+                <postal_code>55551</postal_code>
+            </billing_address>
+            <banking_member id="3">
+                <first_name>Emma</first_name>
+                <last_name>Johnson</last_name>
+                <email>emma.johnson@example.com</email>
+                <phone_number>3111111111</phone_number>
+                <date_of_birth>1992-10-24</date_of_birth>
+                <primary_address id="1">
+                    <building_number>2243</building_number>
+                    <street>1st Fake Street</street>
+                    <city>1st Fake City</city>
+                    <state>1st Fake State</state>
+                    <country>United States</country>
+                    <postal_code>55551</postal_code>
+                </primary_address>
+                <age_group id="4">
+                    <group_label>adult</group_label>
+                </age_group>
+            </banking_member>
+        </member_banking_information>
+        <member_banking_information id="4">
+            <card_number>5555555555555554</card_number>
+            <card_type>Discover</card_type>
+            <billing_address id="3">
+                <building_number>4</building_number>
+                <street>Updated Fake Street</street>
+                <city>3rd Fake City</city>
+                <state>California</state>
+                <country>United States</country>
+                <postal_code>55553</postal_code>
+            </billing_address>
+            <banking_member id="4">
+                <first_name>Lucas</first_name>
+                <last_name>Brown</last_name>
+                <email>lucasbrown12@example.com</email>
+                <phone_number>4111111111</phone_number>
+                <date_of_birth>1951-06-05</date_of_birth>
+                <primary_address id="3">
+                    <building_number>4</building_number>
+                    <street>Updated Fake Street</street>
+                    <city>3rd Fake City</city>
+                    <state>California</state>
+                    <country>United States</country>
+                    <postal_code>55553</postal_code>
+                </primary_address>
+                <age_group id="5">
+                    <group_label>senior</group_label>
+                </age_group>
+            </banking_member>
+        </member_banking_information>
+        <member_banking_information id="5">
+            <card_number>5555555555555555</card_number>
+            <card_type>American Express</card_type>
+            <billing_address id="4">
+                <building_number>935</building_number>
+                <street>4th Fake Street</street>
+                <city>4th Fake City</city>
+                <state>2nd Fake State</state>
+                <country>Mexico</country>
+                <postal_code>55554</postal_code>
+            </billing_address>
+            <banking_member id="5">
+                <first_name>Sophia</first_name>
+                <last_name>Martinez</last_name>
+                <email>sophiamartinez@example.com</email>
+                <phone_number>5111111111</phone_number>
+                <date_of_birth>2001-02-10</date_of_birth>
+                <primary_address id="4">
+                    <building_number>935</building_number>
+                    <street>4th Fake Street</street>
+                    <city>4th Fake City</city>
+                    <state>2nd Fake State</state>
+                    <country>Mexico</country>
+                    <postal_code>55554</postal_code>
+                </primary_address>
+                <age_group id="3">
+                    <group_label>young_adult</group_label>
+                </age_group>
+            </banking_member>
+        </member_banking_information>
+    </banking_information>
+    <policy_types>
+        <policy_type id="1">
+            <type_name>Health Insurance</type_name>
+            <policy_description>Coverage can include doctor visits, emergency visits, hospital stays, medical and surgery expenses, and prescription drugs</policy_description>
+        </policy_type>
+        <policy_type id="2">
+            <type_name>Life Insurance</type_name>
+            <policy_description>Lump sum to designated beneficiaries upon the insured persons death</policy_description>
+        </policy_type>
+        <policy_type id="3">
+            <type_name>Automobile Insurance</type_name>
+            <policy_description>Protection against physical damage, bodily injury, and liability resulting from traffic collisions</policy_description>
+        </policy_type>
+        <policy_type id="4">
+            <type_name>Homeowners Insurance</type_name>
+            <policy_description>Covers losses and damages to an individuals residence and assets in the home</policy_description>
+        </policy_type>
+        <policy_type id="5">
+            <type_name>Travel Insurance</type_name>
+            <policy_description>Provides financial support for unexpectancies during travel</policy_description>
+        </policy_type>
+        <policy_type id="6">
+            <type_name>Pet Insurance</type_name>
+            <policy_description>Helps cover the cost of veterinary care due to accidents, illnesses, surguries, and prescription medications</policy_description>
+        </policy_type>
+        <policy_type id="8">
+            <type_name>Renters Insurance</type_name>
+            <policy_description>Protects tenants from the financial impact of unexpected events in their rented homes</policy_description>
+        </policy_type>
+    </policy_types>
+</insurance_management_system>

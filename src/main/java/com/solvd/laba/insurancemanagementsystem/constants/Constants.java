@@ -14,7 +14,7 @@ public class Constants {
 
     public static final String PROPERTY_KEY_NAME = "mySQL";
 
-    public static final String SQL_INSERT_MEMBERS = "INSERT INTO members (first_name, last_name, phone_number, email, date_of_birth, member_age_group_id) VALUES (?, ?, ?, ?, ?, ?);";
+    public static final String SQL_INSERT_MEMBERS = "INSERT INTO members (first_name, last_name, phone_number, email, date_of_birth, primary_address_id, member_age_group_id) VALUES (?, ?, ?, ?, ?, ?, ?);";
 
     public static final String SQL_INSERT_ADDRESSES = "INSERT INTO addresses (building_number, unit_number, street, city, state, country, postal_code) VALUES (?, ?, ?, ?, ?, ?, ?);";
 
@@ -48,7 +48,15 @@ public class Constants {
 
     public static final String SQL_FIND_BY_MEMBER_ID_BANK = "SELECT * FROM banking_information WHERE banking_member_id = ?;";
 
-    public static final String SQL_FULL_TABLE = "SELECT * FROM ?;";
+    public static final String SQL_FULL_TABLE_MEMBERS = "SELECT * FROM members;";
+
+    public static final String SQL_FULL_TABLE_ADDRESSES = "SELECT * FROM addresses;";
+
+    public static final String SQL_FULL_TABLE_BANK = "SELECT * FROM banking_information;";
+
+    public static final String SQL_FULL_TABLE_AGENT = "SELECT * FROM agent;";
+
+    public static final String SQL_FULL_TABLE_POLICY_TYPE = "SELECT * FROM policy_type;";
 
     public static final int MYSQL = 1;
 

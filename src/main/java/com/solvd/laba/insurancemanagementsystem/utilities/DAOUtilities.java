@@ -21,6 +21,10 @@ public class DAOUtilities {
         return statement;
     }
 
+    public static PreparedStatement preparedStatement(Connection connection, String sql, boolean returnGeneratedKeys) throws SQLException {
+        return connection.prepareStatement(sql, returnGeneratedKeys ? Statement.RETURN_GENERATED_KEYS : Statement.NO_GENERATED_KEYS);
+    }
+
     public static void setValues(PreparedStatement statement, Object... values) throws SQLException {
         for (int i = 0; i < values.length; i++) {
             statement.setObject(i + 1, values[i]);

@@ -19,7 +19,7 @@ import static com.solvd.laba.insurancemanagementsystem.utilities.DAOUtilities.pr
 public class MySQLAgentDAO implements AgentDAO {
 
     @Override
-    public Map<Integer, Agent> getAgentsMap() throws DAOException {
+    public Map<Integer, Agent> getMap() throws DAOException {
         Map<Integer, Agent> agentsMap = new HashMap<>();
         setAgentsMap(agentsMap);
         return agentsMap;
@@ -27,7 +27,7 @@ public class MySQLAgentDAO implements AgentDAO {
 
     private void setAgentsMap(Map<Integer, Agent> agentsMap) throws DAOException {
         try (Connection connection = DBConnection.getConnection();
-             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE, false, "agent")) {
+             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE_AGENT, false)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Agent agent = getAgentFromResultSet(resultSet);

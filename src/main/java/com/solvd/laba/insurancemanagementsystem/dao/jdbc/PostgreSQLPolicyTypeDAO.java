@@ -24,7 +24,7 @@ public class PostgreSQLPolicyTypeDAO implements PolicyTypeDAO {
     }
 
     @Override
-    public Map<Integer, PolicyType> getPoliciesMap() throws DAOException {
+    public Map<Integer, PolicyType> getMap() throws DAOException {
         return null;
     }
 

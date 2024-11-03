@@ -9,6 +9,4 @@ public interface PolicyTypeDAO extends GenericDAO<PolicyType, Integer> {
 
      PolicyType findByTypeName(String name) throws DAOException;
 
-     Map<Integer, PolicyType> getPoliciesMap() throws DAOException;
-
 }

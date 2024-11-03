@@ -19,7 +19,7 @@ import static com.solvd.laba.insurancemanagementsystem.utilities.DAOUtilities.pr
 public class MySQLMembersDAO implements MembersDAO {
 
     @Override
-    public Map<Integer, Members> getMembersMap() throws DAOException {
+    public Map<Integer, Members> getMap() throws DAOException {
         Map<Integer, Members> membersMap = new HashMap<>();
         setMembersMap(membersMap);
         return membersMap;
@@ -48,7 +48,7 @@ public class MySQLMembersDAO implements MembersDAO {
 
     private void setMembersMap(Map<Integer, Members> membersMap) throws DAOException {
         try (Connection connection = DBConnection.getConnection();
-             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE, false, "members")) {
+             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE_MEMBERS, false)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Members member = getMembersFromResultSet(resultSet);

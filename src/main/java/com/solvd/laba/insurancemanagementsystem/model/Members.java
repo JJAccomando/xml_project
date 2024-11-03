@@ -2,7 +2,9 @@ package com.solvd.laba.insurancemanagementsystem.model;
 
 import com.solvd.laba.insurancemanagementsystem.constants.AgeGroup;
 import com.solvd.laba.insurancemanagementsystem.xml.AgeGroupAdapter;
+import com.solvd.laba.insurancemanagementsystem.xml.DateAdapter;
 
+import java.beans.Transient;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
@@ -15,16 +17,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class Members {
     @XmlAttribute(name = "id")
     private Integer memberId;
+    @XmlElement(name = "first_name")
     private String firstName;
+    @XmlElement(name = "last_name")
     private String lastName;
     private String email;
+    @XmlElement(name = "phone_number")
     private String phoneNum;
+    @XmlElement(name = "date_of_birth")
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private Date dateOfBirth;
-    @XmlElementRef(name = "primaryAddress", type = Addresses.class)
+    @XmlElement(name = "primary_address")
     private Addresses address;
-    @XmlElement(name = "age_group")
-    @XmlJavaTypeAdapter(AgeGroupAdapter.class)
+    @XmlTransient
     private AgeGroup ageGroup;
+    @XmlElement(name = "age_group")
+    private AgeGroupAdapter ageGroupAdapter;
 
     public Integer getMemberId() { return memberId; }
 
@@ -56,9 +64,12 @@ public class Members {
         this.dateOfBirth = Date.valueOf(dateOfBirth);
         int age = calculateAge(this.getDateOfBirth());
         this.ageGroup = determineAgeGroup(age);
+        this.ageGroupAdapter = new AgeGroupAdapter(ageGroup);
     }
 
     public AgeGroup getAgeGroup() { return ageGroup; }
+
+    public AgeGroupAdapter getAgeGroupAdapter() { return ageGroupAdapter; }
 
     private static int calculateAge(Date date) {
         LocalDate localDate = date.toLocalDate();
@@ -98,6 +109,6 @@ public class Members {
 
     @Override
     public String toString() {
-        return String.format("Member[ID: %d, Name: %s %s, Email: %s, Phone Number: %s]", memberId, firstName, lastName, email, phoneNum);
+        return String.format("Member[ID: %d, Name: %s %s, Email: %s, Phone Number: %s, Date of Birth: %s]", memberId, firstName, lastName, email, phoneNum, dateOfBirth);
     }
 }

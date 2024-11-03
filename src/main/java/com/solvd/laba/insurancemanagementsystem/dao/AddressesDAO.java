@@ -6,7 +6,4 @@ import com.solvd.laba.insurancemanagementsystem.model.Addresses;
 import java.util.Map;
 
 public interface AddressesDAO extends GenericDAO<Addresses, Integer> {
-
-    Map<Integer, Addresses> getAddressesMap() throws DAOException;
-
 }

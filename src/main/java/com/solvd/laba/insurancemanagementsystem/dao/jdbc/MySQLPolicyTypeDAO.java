@@ -84,7 +84,7 @@ public class MySQLPolicyTypeDAO implements PolicyTypeDAO {
     }
 
     @Override
-    public Map<Integer, PolicyType> getPoliciesMap() throws DAOException {
+    public Map<Integer, PolicyType> getMap() throws DAOException {
         Map<Integer, PolicyType> policyMap = new HashMap<>();
         setPolicyMap(policyMap);
         return policyMap;
@@ -92,7 +92,7 @@ public class MySQLPolicyTypeDAO implements PolicyTypeDAO {
 
     private void setPolicyMap(Map<Integer, PolicyType> policyMap) throws DAOException {
         try (Connection connection = DBConnection.getConnection();
-             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE, false, "policy_type")) {
+             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE_POLICY_TYPE, false)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 PolicyType policy = getPolicyFromResultSet(resultSet);

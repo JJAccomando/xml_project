@@ -1,0 +1,104 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:complexType name="address">
+        <xs:sequence>
+            <xs:element name="building_number" type="xs:integer"/>
+            <xs:element name="unit_number" type="xs:string" minOccurs="0"/>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="state" type="xs:string" minOccurs="0"/>
+            <xs:element name="country" type="xs:string"/>
+            <xs:element name="postal_code" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name ="id" type ="xs:integer"/>
+    </xs:complexType>
+
+    <xs:complexType name="member">
+        <xs:sequence>
+            <xs:element name="first_name" type="xs:string"/>
+            <xs:element name="last_name" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="phone_number"/>
+            <xs:element name="date_of_birth" type="xs:string"/>
+            <xs:element name="primary_address" type="address"/>
+            <xs:element name="age_group" type="age_group_adapter"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:integer"/>
+    </xs:complexType>
+
+    <xs:complexType name="age_group_adapter">
+        <xs:sequence>
+            <xs:element name="group_label" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:integer"/>
+    </xs:complexType>
+
+    <xs:element name="insurance_management_system">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="members">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="member" maxOccurs="unbounded" type="member"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="agents">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="agent" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="first_name" type="xs:string"/>
+                                        <xs:element name="last_name" type="xs:string"/>
+                                        <xs:element name="email" type="xs:string"/>
+                                        <xs:element name="phone_number" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:integer"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="banking_information">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="member_banking_information" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="card_number" type="xs:string"/>
+                                        <xs:element name="card_type" type="xs:string"/>
+                                        <xs:element name="billing_address" type="address"/>
+                                        <xs:element name="banking_member" type="member"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:integer"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="policy_types">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="policy_type" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="type_name" type="xs:string"/>
+                                        <xs:element name="policy_description" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:integer"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -27,7 +27,7 @@ public class OracleMembersDAO implements MembersDAO {
     }
 
     @Override
-    public Map<Integer, Members> getMembersMap() throws DAOException {
+    public Map<Integer, Members> getMap() throws DAOException {
         return null;
     }
 }

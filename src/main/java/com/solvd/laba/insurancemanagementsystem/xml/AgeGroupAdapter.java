@@ -2,24 +2,32 @@ package com.solvd.laba.insurancemanagementsystem.xml;
 
 import com.solvd.laba.insurancemanagementsystem.constants.AgeGroup;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.util.Objects;
 
-public class AgeGroupAdapter extends XmlAdapter<Integer, AgeGroup> {
+@XmlRootElement(name = "age_group_adapter")
+public class AgeGroupAdapter {
 
-    @Override
-    public AgeGroup unmarshal(Integer id) throws IllegalArgumentException {
-        for (AgeGroup group : AgeGroup.values()) {
-            if (Objects.equals(group.getId(), id)) {
-                return group;
-            }
-        }
-        throw new IllegalArgumentException("Unknown ID: " + id);
+    private final AgeGroup ageGroup;
+
+    public AgeGroupAdapter() {
+        this.ageGroup = AgeGroup.DEFAULT;
     }
 
-    @Override
-    public Integer marshal(AgeGroup ageGroup) throws Exception {
+    public AgeGroupAdapter(AgeGroup ageGroup) {
+        this.ageGroup = ageGroup;
+    }
+
+    @XmlAttribute(name = "id")
+    public Integer getAgeGroupId() {
         return ageGroup.getId();
     }
 
+    @XmlElement(name = "group_label")
+    public String getAgeGroupLabel() {
+        return ageGroup.getLabel();
+    }
 }

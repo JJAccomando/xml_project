@@ -1,15 +1,18 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "agent")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Agent {
     @XmlAttribute(name = "id")
     private Integer agentId;
+    @XmlElement(name = "first_name")
     private String firstName;
+    @XmlElement(name = "last_name")
     private String lastName;
     private String email;
+    @XmlElement(name = "phone_number")
     private String phoneNum;
 
     public Integer getAgentId() { return agentId; }

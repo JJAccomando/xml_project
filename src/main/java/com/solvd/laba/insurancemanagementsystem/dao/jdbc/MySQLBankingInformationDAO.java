@@ -15,7 +15,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.solvd.laba.insurancemanagementsystem.constants.Constants.*;
@@ -60,7 +62,7 @@ public class MySQLBankingInformationDAO implements BankingInformationDAO {
     }
 
     @Override
-    public Map<Integer, BankingInformation> getBankingInfoMap() throws DAOException {
+    public Map<Integer, BankingInformation> getMap() throws DAOException {
         Map<Integer, BankingInformation> bankInfoMap = new HashMap<>();
         setBankInfoMap(bankInfoMap);
         return bankInfoMap;
@@ -68,7 +70,7 @@ public class MySQLBankingInformationDAO implements BankingInformationDAO {
 
     private void setBankInfoMap(Map<Integer, BankingInformation> bankInfoMap) throws DAOException {
         try (Connection connection = DBConnection.getConnection();
-             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE, false, "banking_information")) {
+             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE_BANK, false)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 BankingInformation bankInfo = getBankInfoFromResultSet(resultSet);
@@ -114,7 +116,7 @@ public class MySQLBankingInformationDAO implements BankingInformationDAO {
         bankInfo.setCardType(resultSet.getString("card_type"));
         DAOFactory mySQLFactory = DAOFactory.getDAOFactory(MYSQL);
         AddressesService addressesService = new AddressesService(mySQLFactory);
-        Addresses billingAddress = addressesService.addressesById(resultSet.getInt("primary_address_id"));
+        Addresses billingAddress = addressesService.addressesById(resultSet.getInt("billing_address_id"));
         MembersService membersService = new MembersService(mySQLFactory);
         Members bankingMember = membersService.membersById(resultSet.getInt("banking_member_id"));
         bankInfo.setBillingAddress(billingAddress);

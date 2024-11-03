@@ -7,8 +7,6 @@ import java.util.Map;
 
 public interface AgentDAO extends GenericDAO<Agent, Integer> {
 
-    Map<Integer, Agent> getAgentsMap() throws DAOException;
-
     Agent findByEmail(String email) throws DAOException;
 
     Agent findByPhoneNum(String phoneNum) throws DAOException;

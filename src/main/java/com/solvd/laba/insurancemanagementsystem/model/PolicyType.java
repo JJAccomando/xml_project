@@ -1,16 +1,15 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "policyType")
+@XmlRootElement(name = "policy_type")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PolicyType {
     @XmlAttribute(name = "id")
     private Integer policyTypeId;
+    @XmlElement(name = "type_name")
     private String typeName;
+    @XmlElement(name = "policy_description")
     private String policyDescription;
 
     public Integer getPolicyTypeId() { return policyTypeId; }

@@ -47,11 +47,12 @@ public class BankingInformationService {
         }
     }
 
-    public Map<Integer, BankingInformation> getAllBankingInformation() throws DAOException {
+    public Map<Integer, BankingInformation> getAllBankingInformationMap() throws DAOException {
         try {
-            return bankingInformationDAO.getBankingInfoMap();
+            return bankingInformationDAO.getMap();
         } catch (DAOException e) {
             throw new DAOException(e.getMessage());
         }
     }
+
 }

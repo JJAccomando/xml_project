@@ -1,19 +1,19 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "bankingInformation")
+@XmlRootElement(name = "member_banking_information")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class BankingInformation {
+    @XmlAttribute(name = "id")
     private Integer bankingId;
+    @XmlElement(name = "card_number")
     private String cardNum;
+    @XmlElement(name = "card_type")
     private String cardType;
-    @XmlElementRef(name = "billingAddress", type = Addresses.class)
+    @XmlElement(name = "billing_address")
     private Addresses billingAddress;
-    @XmlElementRef(name = "bankingMember", type = Members.class)
+    @XmlElement(name = "banking_member")
     private Members bankingMember;
 
     public Integer getBankingId() { return bankingId; }

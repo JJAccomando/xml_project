@@ -49,7 +49,7 @@ public class MembersService {
 
     public Map<Integer, Members> getAllMembers() throws DAOException {
         try {
-            return membersDAO.getMembersMap();
+            return membersDAO.getMap();
         } catch (DAOException e) {
             throw new DAOException(e.getMessage());
         }

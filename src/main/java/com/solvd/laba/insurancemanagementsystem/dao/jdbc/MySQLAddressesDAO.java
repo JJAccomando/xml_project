@@ -18,7 +18,7 @@ import static com.solvd.laba.insurancemanagementsystem.utilities.DAOUtilities.pr
 public class MySQLAddressesDAO implements AddressesDAO {
 
     @Override
-    public Map<Integer, Addresses> getAddressesMap() throws DAOException {
+    public Map<Integer, Addresses> getMap() throws DAOException {
         Map<Integer, Addresses> addressesMap = new HashMap<>();
         setAddressesMap(addressesMap);
         return addressesMap;
@@ -26,7 +26,7 @@ public class MySQLAddressesDAO implements AddressesDAO {
 
     private void setAddressesMap(Map<Integer, Addresses> addressesMap) throws DAOException {
         try (Connection connection = DBConnection.getConnection();
-             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE, false, "addresses")) {
+             PreparedStatement statement = prepareStatement(connection, SQL_FULL_TABLE_ADDRESSES, false)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Addresses address = getAddressFromResultSet(resultSet);

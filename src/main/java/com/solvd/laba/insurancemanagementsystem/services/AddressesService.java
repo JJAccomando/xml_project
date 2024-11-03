@@ -15,7 +15,7 @@ public class AddressesService {
         this.addressesDAO = daoFactory.getAddressesDAO();
     }
 
-    public void createAddresses(Addresses address) throws DAOException {
+    public void createAddress(Addresses address) throws DAOException {
         try {
             addressesDAO.create(address);
         } catch (DAOException e) {
@@ -31,9 +31,9 @@ public class AddressesService {
         }
     }
 
-    public Map<Integer, Addresses> getAllAddresses() throws DAOException {
+    public Map<Integer, Addresses> getAddressesMap() throws DAOException {
         try {
-            return addressesDAO.getAddressesMap();
+            return addressesDAO.getMap();
         } catch (DAOException e) {
             throw new DAOException(e.getMessage());
         }

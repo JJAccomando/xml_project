@@ -4,6 +4,7 @@ import com.solvd.laba.insurancemanagementsystem.dao.BankingInformationDAO;
 import com.solvd.laba.insurancemanagementsystem.exceptions.DAOException;
 import com.solvd.laba.insurancemanagementsystem.model.BankingInformation;
 
+import java.util.List;
 import java.util.Map;
 
 public class OracleBankingInformationDAO implements BankingInformationDAO {
@@ -18,7 +19,7 @@ public class OracleBankingInformationDAO implements BankingInformationDAO {
     }
 
     @Override
-    public Map<Integer, BankingInformation> getBankingInfoMap() throws DAOException {
+    public Map<Integer, BankingInformation> getMap() throws DAOException {
         return null;
     }
 

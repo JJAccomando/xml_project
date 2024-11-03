@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class OracleAddressesDAO implements AddressesDAO {
     @Override
-    public Map<Integer, Addresses> getAddressesMap() throws DAOException {
+    public Map<Integer, Addresses> getMap() throws DAOException {
         return null;
     }
 

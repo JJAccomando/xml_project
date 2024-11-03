@@ -1,21 +1,21 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "address")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Addresses {
     @XmlAttribute(name = "id")
     private Integer addressId;
+    @XmlElement(name = "building_number")
     private Integer buildingNum;
+    @XmlElement(name = "unit_number")
     private String unitNum;
     private String street;
     private String city;
     private String state;
     private String country;
+    @XmlElement(name = "postal_code")
     private String postalCode;
 
     public Integer getAddressId() { return addressId; }

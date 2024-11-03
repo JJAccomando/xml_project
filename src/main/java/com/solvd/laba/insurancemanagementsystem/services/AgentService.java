@@ -49,7 +49,7 @@ public class AgentService {
 
     public Map<Integer, Agent> getAllAgents() throws DAOException {
         try {
-            return agentDAO.getAgentsMap();
+            return agentDAO.getMap();
         } catch (DAOException e) {
             throw new DAOException(e.getMessage());
         }
