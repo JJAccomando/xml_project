@@ -1,4 +1,4 @@
-package com.solvd.laba.insurancemanagementsystem.factory;
+package com.solvd.laba.insurancemanagementsystem.xml;
 
 import com.solvd.laba.insurancemanagementsystem.model.*;
 import org.xml.sax.Attributes;
@@ -67,34 +67,42 @@ public class CustomSAXHandler extends DefaultHandler {
             XMLHelper.populateAddresses(address, qName, data.toString());
             if (qName.equalsIgnoreCase("primary_address")) {
                 member.setAddress(address);
+                address = null;
             } else if (qName.equalsIgnoreCase("billing_address")) {
                 bankInfo.setBillingAddress(address);
+                address = null;
             }
-            address = null;
         }
         if (member != null) {
             XMLHelper.populateMember(member, qName, data.toString());
             if (qName.equalsIgnoreCase("member")) {
                 members.add(member);
+                member = null;
             } else if (qName.equalsIgnoreCase("banking_member")) {
                 bankInfo.setBankingMember(member);
+                member = null;
             }
-            member = null;
         }
         if (bankInfo != null) {
             XMLHelper.populateBankingInformation(bankInfo, qName, data.toString());
-            bankInfoList.add(bankInfo);
-            bankInfo = null;
+            if (qName.equalsIgnoreCase("member_banking_information")) {
+                bankInfoList.add(bankInfo);
+                bankInfo = null;
+            }
         }
         if (agent != null) {
             XMLHelper.populateAgent(agent, qName, data.toString());
-            agents.add(agent);
-            agent = null;
+            if (qName.equalsIgnoreCase("agent")) {
+                agents.add(agent);
+                agent = null;
+            }
         }
         if (policyType != null) {
             XMLHelper.populatePolicyType(policyType, qName, data.toString());
-            policies.add(policyType);
-            policyType = null;
+            if (qName.equalsIgnoreCase("policy_type")) {
+                policies.add(policyType);
+                policyType = null;
+            }
         }
     }
 

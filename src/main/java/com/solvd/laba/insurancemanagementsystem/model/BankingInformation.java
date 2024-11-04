@@ -1,19 +1,27 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "member_banking_information")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class BankingInformation {
     @XmlAttribute(name = "id")
+    @JsonProperty("id")
     private Integer bankingId;
     @XmlElement(name = "card_number")
+    @JsonProperty("card_number")
     private String cardNum;
     @XmlElement(name = "card_type")
+    @JsonProperty("card_type")
     private String cardType;
     @XmlElement(name = "billing_address")
+    @JsonProperty("billing_address")
     private Addresses billingAddress;
     @XmlElement(name = "banking_member")
+    @JsonProperty("banking_member")
     private Members bankingMember;
 
     public Integer getBankingId() { return bankingId; }

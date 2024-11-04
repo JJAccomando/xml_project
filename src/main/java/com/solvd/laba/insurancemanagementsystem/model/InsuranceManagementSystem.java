@@ -1,5 +1,7 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
@@ -8,15 +10,19 @@ import java.util.List;
 public class InsuranceManagementSystem {
     @XmlElementWrapper(name = "members")
     @XmlElement(name = "member")
+    @JsonProperty("members")
     private List<Members> membersList;
     @XmlElementWrapper(name = "agents")
     @XmlElement(name = "agent")
+    @JsonProperty("agents")
     private List<Agent> agentList;
     @XmlElementWrapper(name = "banking_information")
     @XmlElement(name = "member_banking_information")
+    @JsonProperty("banking_information")
     private List<BankingInformation> bankingInformationList;
     @XmlElementWrapper(name = "policy_types")
-    @XmlElement(name = "policy_type")
+    @XmlElement(name = "policy_types")
+    @JsonProperty("policy_type")
     private List<PolicyType> policyTypeList;
 
     public List<Members> getMembersList() {

@@ -1,18 +1,25 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "agent")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Agent {
     @XmlAttribute(name = "id")
+    @JsonProperty("id")
     private Integer agentId;
     @XmlElement(name = "first_name")
+    @JsonProperty("first_name")
     private String firstName;
     @XmlElement(name = "last_name")
+    @JsonProperty("last_name")
     private String lastName;
+    @JsonProperty("email")
     private String email;
     @XmlElement(name = "phone_number")
+    @JsonProperty("phone_number")
     private String phoneNum;
 
     public Integer getAgentId() { return agentId; }

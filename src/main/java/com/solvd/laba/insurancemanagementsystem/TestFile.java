@@ -1,15 +1,14 @@
 package com.solvd.laba.insurancemanagementsystem;
 
 import com.solvd.laba.insurancemanagementsystem.factory.DAOFactory;
-import com.solvd.laba.insurancemanagementsystem.factory.JAXBHandler;
+import com.solvd.laba.insurancemanagementsystem.json.JacksonParser;
 import com.solvd.laba.insurancemanagementsystem.model.*;
 import com.solvd.laba.insurancemanagementsystem.services.AgentService;
 import com.solvd.laba.insurancemanagementsystem.services.BankingInformationService;
 import com.solvd.laba.insurancemanagementsystem.services.MembersService;
 import com.solvd.laba.insurancemanagementsystem.services.PolicyTypeService;
-import org.xml.sax.SAXException;
 
-import javax.xml.bind.JAXBException;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ import java.util.Map;
 
 import static com.solvd.laba.insurancemanagementsystem.constants.Constants.MYSQL;
 
-class TestFile {
+public class TestFile {
 
     private static final InsuranceManagementSystem INSURANCE_MANAGEMENT_SYSTEM;
     private static final List<Members> MEMBERS;
@@ -41,7 +40,7 @@ class TestFile {
         DAOFactory mySQLFactory = DAOFactory.getDAOFactory(MYSQL);
         MembersService membersService = new MembersService(mySQLFactory);
         Map<Integer, Members> membersMap = membersService.getAllMembers();
-        members = new ArrayList<>(membersMap.values());
+        members.addAll(membersMap.values());
         insuranceManagementSystem.setMembersList(members);
     }
 
@@ -49,7 +48,7 @@ class TestFile {
         DAOFactory mySQLFactory = DAOFactory.getDAOFactory(MYSQL);
         AgentService agentService = new AgentService(mySQLFactory);
         Map<Integer, Agent> agentMap = agentService.getAllAgents();
-        agents = new ArrayList<>(agentMap.values());
+        agents.addAll(agentMap.values());
         insuranceManagementSystem.setAgentList(agents);
     }
 
@@ -57,7 +56,7 @@ class TestFile {
         DAOFactory mySQLFactory = DAOFactory.getDAOFactory(MYSQL);
         BankingInformationService bankingInformationService = new BankingInformationService(mySQLFactory);
         Map<Integer, BankingInformation> bankInfoMap = bankingInformationService.getAllBankingInformationMap();
-        bankInfo = new ArrayList<>(bankInfoMap.values());
+        bankInfo.addAll(bankInfoMap.values());
         insuranceManagementSystem.setBankingInformationList(bankInfo);
     }
 
@@ -65,19 +64,21 @@ class TestFile {
         DAOFactory mySQLFactory = DAOFactory.getDAOFactory(MYSQL);
         PolicyTypeService policyTypeService = new PolicyTypeService(mySQLFactory);
         Map<Integer, PolicyType> policyMap = policyTypeService.getAllPolicyTypes();
-        policyTypes = new ArrayList<>(policyMap.values());
+        policyTypes.addAll(policyMap.values());
         insuranceManagementSystem.setPolicyTypeList(policyTypes);
     }
 
-    public static void validate() {
+    public static void main(String[] args) {
+        InsuranceManagementSystem newSystem = new InsuranceManagementSystem();
         try {
-            JAXBHandler.marshal(INSURANCE_MANAGEMENT_SYSTEM);
-        } catch (JAXBException | IOException | SAXException e) {
+            JacksonParser.write(INSURANCE_MANAGEMENT_SYSTEM);
+        } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        validate();
+        try {
+            newSystem = JacksonParser.read(new File("insurance_management_system.json"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

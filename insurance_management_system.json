@@ -1,0 +1,355 @@
+{
+  "members" : [ {
+    "id" : 1,
+    "first_name" : "John",
+    "last_name" : "Smith",
+    "email" : "johnsmith@example.com",
+    "phone_number" : "1111111111",
+    "date_of_birth" : 261043200000,
+    "primary_address" : {
+      "id" : 1,
+      "building_number" : 2243,
+      "unit_number" : null,
+      "street" : "1st Fake Street",
+      "city" : "1st Fake City",
+      "state" : "1st Fake State",
+      "country" : "United States",
+      "postal_code" : "55551"
+    },
+    "age_group" : {
+      "id" : 4,
+      "group_label" : "adult"
+    }
+  }, {
+    "id" : 2,
+    "first_name" : "Jane",
+    "last_name" : "Doe",
+    "email" : "janesmith@example.com",
+    "phone_number" : "2111111111",
+    "date_of_birth" : 504864000000,
+    "primary_address" : {
+      "id" : 2,
+      "building_number" : 1498,
+      "unit_number" : "14",
+      "street" : "2nd Fake Street",
+      "city" : "2nd Fake City",
+      "state" : null,
+      "country" : "United Kingdom",
+      "postal_code" : "55552"
+    },
+    "age_group" : {
+      "id" : 4,
+      "group_label" : "adult"
+    }
+  }, {
+    "id" : 3,
+    "first_name" : "Emma",
+    "last_name" : "Johnson",
+    "email" : "emma.johnson@example.com",
+    "phone_number" : "3111111111",
+    "date_of_birth" : 719910000000,
+    "primary_address" : {
+      "id" : 1,
+      "building_number" : 2243,
+      "unit_number" : null,
+      "street" : "1st Fake Street",
+      "city" : "1st Fake City",
+      "state" : "1st Fake State",
+      "country" : "United States",
+      "postal_code" : "55551"
+    },
+    "age_group" : {
+      "id" : 4,
+      "group_label" : "adult"
+    }
+  }, {
+    "id" : 4,
+    "first_name" : "Lucas",
+    "last_name" : "Brown",
+    "email" : "lucasbrown12@example.com",
+    "phone_number" : "4111111111",
+    "date_of_birth" : -586198800000,
+    "primary_address" : {
+      "id" : 3,
+      "building_number" : 4,
+      "unit_number" : null,
+      "street" : "Updated Fake Street",
+      "city" : "3rd Fake City",
+      "state" : "California",
+      "country" : "United States",
+      "postal_code" : "55553"
+    },
+    "age_group" : {
+      "id" : 5,
+      "group_label" : "senior"
+    }
+  }, {
+    "id" : 5,
+    "first_name" : "Sophia",
+    "last_name" : "Martinez",
+    "email" : "sophiamartinez@example.com",
+    "phone_number" : "5111111111",
+    "date_of_birth" : 981792000000,
+    "primary_address" : {
+      "id" : 4,
+      "building_number" : 935,
+      "unit_number" : null,
+      "street" : "4th Fake Street",
+      "city" : "4th Fake City",
+      "state" : "2nd Fake State",
+      "country" : "Mexico",
+      "postal_code" : "55554"
+    },
+    "age_group" : {
+      "id" : 3,
+      "group_label" : "young_adult"
+    }
+  } ],
+  "agents" : [ {
+    "id" : 1,
+    "first_name" : "James",
+    "last_name" : "Douglas",
+    "email" : "james.douglas@insurancecompany.com",
+    "phone_number" : "5551231234"
+  }, {
+    "id" : 2,
+    "first_name" : "Ophelia",
+    "last_name" : "Kirk",
+    "email" : "ophelia.kirk@insurancecompany.com",
+    "phone_number" : "5551234123"
+  }, {
+    "id" : 3,
+    "first_name" : "Andrew",
+    "last_name" : "Goldman",
+    "email" : "andrew.goldman@insurancecompany.com",
+    "phone_number" : "5551234512"
+  }, {
+    "id" : 4,
+    "first_name" : "Kaitlyn",
+    "last_name" : "Leapold",
+    "email" : "kaitlyn.leapold@insurancecompany.com",
+    "phone_number" : "5551234561"
+  }, {
+    "id" : 5,
+    "first_name" : "George",
+    "last_name" : "Anderson",
+    "email" : "george.anderson@insurancecompany.com",
+    "phone_number" : "5551234568"
+  }, {
+    "id" : 6,
+    "first_name" : "Mitchell",
+    "last_name" : "Moore",
+    "email" : "michell.moore@insurancecompany.com",
+    "phone_number" : "5551234568"
+  } ],
+  "banking_information" : [ {
+    "id" : 1,
+    "card_number" : "5555555555555551",
+    "card_type" : "Visa",
+    "billing_address" : {
+      "id" : 1,
+      "building_number" : 2243,
+      "unit_number" : null,
+      "street" : "1st Fake Street",
+      "city" : "1st Fake City",
+      "state" : "1st Fake State",
+      "country" : "United States",
+      "postal_code" : "55551"
+    },
+    "banking_member" : {
+      "id" : 1,
+      "first_name" : "John",
+      "last_name" : "Smith",
+      "email" : "johnsmith@example.com",
+      "phone_number" : "1111111111",
+      "date_of_birth" : 261043200000,
+      "primary_address" : {
+        "id" : 1,
+        "building_number" : 2243,
+        "unit_number" : null,
+        "street" : "1st Fake Street",
+        "city" : "1st Fake City",
+        "state" : "1st Fake State",
+        "country" : "United States",
+        "postal_code" : "55551"
+      },
+      "age_group" : {
+        "id" : 4,
+        "group_label" : "adult"
+      }
+    }
+  }, {
+    "id" : 2,
+    "card_number" : "5555555555555552",
+    "card_type" : "Mastercard",
+    "billing_address" : {
+      "id" : 2,
+      "building_number" : 1498,
+      "unit_number" : "14",
+      "street" : "2nd Fake Street",
+      "city" : "2nd Fake City",
+      "state" : null,
+      "country" : "United Kingdom",
+      "postal_code" : "55552"
+    },
+    "banking_member" : {
+      "id" : 2,
+      "first_name" : "Jane",
+      "last_name" : "Doe",
+      "email" : "janesmith@example.com",
+      "phone_number" : "2111111111",
+      "date_of_birth" : 504864000000,
+      "primary_address" : {
+        "id" : 2,
+        "building_number" : 1498,
+        "unit_number" : "14",
+        "street" : "2nd Fake Street",
+        "city" : "2nd Fake City",
+        "state" : null,
+        "country" : "United Kingdom",
+        "postal_code" : "55552"
+      },
+      "age_group" : {
+        "id" : 4,
+        "group_label" : "adult"
+      }
+    }
+  }, {
+    "id" : 3,
+    "card_number" : "5555555555555553",
+    "card_type" : "Mastercard",
+    "billing_address" : {
+      "id" : 1,
+      "building_number" : 2243,
+      "unit_number" : null,
+      "street" : "1st Fake Street",
+      "city" : "1st Fake City",
+      "state" : "1st Fake State",
+      "country" : "United States",
+      "postal_code" : "55551"
+    },
+    "banking_member" : {
+      "id" : 3,
+      "first_name" : "Emma",
+      "last_name" : "Johnson",
+      "email" : "emma.johnson@example.com",
+      "phone_number" : "3111111111",
+      "date_of_birth" : 719910000000,
+      "primary_address" : {
+        "id" : 1,
+        "building_number" : 2243,
+        "unit_number" : null,
+        "street" : "1st Fake Street",
+        "city" : "1st Fake City",
+        "state" : "1st Fake State",
+        "country" : "United States",
+        "postal_code" : "55551"
+      },
+      "age_group" : {
+        "id" : 4,
+        "group_label" : "adult"
+      }
+    }
+  }, {
+    "id" : 4,
+    "card_number" : "5555555555555554",
+    "card_type" : "Discover",
+    "billing_address" : {
+      "id" : 3,
+      "building_number" : 4,
+      "unit_number" : null,
+      "street" : "Updated Fake Street",
+      "city" : "3rd Fake City",
+      "state" : "California",
+      "country" : "United States",
+      "postal_code" : "55553"
+    },
+    "banking_member" : {
+      "id" : 4,
+      "first_name" : "Lucas",
+      "last_name" : "Brown",
+      "email" : "lucasbrown12@example.com",
+      "phone_number" : "4111111111",
+      "date_of_birth" : -586198800000,
+      "primary_address" : {
+        "id" : 3,
+        "building_number" : 4,
+        "unit_number" : null,
+        "street" : "Updated Fake Street",
+        "city" : "3rd Fake City",
+        "state" : "California",
+        "country" : "United States",
+        "postal_code" : "55553"
+      },
+      "age_group" : {
+        "id" : 5,
+        "group_label" : "senior"
+      }
+    }
+  }, {
+    "id" : 5,
+    "card_number" : "5555555555555555",
+    "card_type" : "American Express",
+    "billing_address" : {
+      "id" : 4,
+      "building_number" : 935,
+      "unit_number" : null,
+      "street" : "4th Fake Street",
+      "city" : "4th Fake City",
+      "state" : "2nd Fake State",
+      "country" : "Mexico",
+      "postal_code" : "55554"
+    },
+    "banking_member" : {
+      "id" : 5,
+      "first_name" : "Sophia",
+      "last_name" : "Martinez",
+      "email" : "sophiamartinez@example.com",
+      "phone_number" : "5111111111",
+      "date_of_birth" : 981792000000,
+      "primary_address" : {
+        "id" : 4,
+        "building_number" : 935,
+        "unit_number" : null,
+        "street" : "4th Fake Street",
+        "city" : "4th Fake City",
+        "state" : "2nd Fake State",
+        "country" : "Mexico",
+        "postal_code" : "55554"
+      },
+      "age_group" : {
+        "id" : 3,
+        "group_label" : "young_adult"
+      }
+    }
+  } ],
+  "policy_type" : [ {
+    "id" : 1,
+    "type_name" : "Health Insurance",
+    "policy_description" : "Coverage can include doctor visits, emergency visits, hospital stays, medical and surgery expenses, and prescription drugs"
+  }, {
+    "id" : 2,
+    "type_name" : "Life Insurance",
+    "policy_description" : "Lump sum to designated beneficiaries upon the insured persons death"
+  }, {
+    "id" : 3,
+    "type_name" : "Automobile Insurance",
+    "policy_description" : "Protection against physical damage, bodily injury, and liability resulting from traffic collisions"
+  }, {
+    "id" : 4,
+    "type_name" : "Homeowners Insurance",
+    "policy_description" : "Covers losses and damages to an individuals residence and assets in the home"
+  }, {
+    "id" : 5,
+    "type_name" : "Travel Insurance",
+    "policy_description" : "Provides financial support for unexpectancies during travel"
+  }, {
+    "id" : 6,
+    "type_name" : "Pet Insurance",
+    "policy_description" : "Helps cover the cost of veterinary care due to accidents, illnesses, surguries, and prescription medications"
+  }, {
+    "id" : 8,
+    "type_name" : "Renters Insurance",
+    "policy_description" : "Protects tenants from the financial impact of unexpected events in their rented homes"
+  } ]
+}

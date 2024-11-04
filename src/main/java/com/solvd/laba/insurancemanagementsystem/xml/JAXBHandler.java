@@ -1,4 +1,4 @@
-package com.solvd.laba.insurancemanagementsystem.factory;
+package com.solvd.laba.insurancemanagementsystem.xml;
 
 import com.solvd.laba.insurancemanagementsystem.model.*;
 import org.xml.sax.SAXException;

@@ -1,5 +1,8 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.solvd.laba.insurancemanagementsystem.constants.AgeGroup;
 import com.solvd.laba.insurancemanagementsystem.xml.AgeGroupAdapter;
 import com.solvd.laba.insurancemanagementsystem.xml.DateAdapter;
@@ -16,22 +19,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Members {
     @XmlAttribute(name = "id")
+    @JsonProperty("id")
     private Integer memberId;
     @XmlElement(name = "first_name")
+    @JsonProperty("first_name")
     private String firstName;
     @XmlElement(name = "last_name")
+    @JsonProperty("last_name")
     private String lastName;
+    @JsonProperty("email")
     private String email;
     @XmlElement(name = "phone_number")
+    @JsonProperty("phone_number")
     private String phoneNum;
     @XmlElement(name = "date_of_birth")
     @XmlJavaTypeAdapter(DateAdapter.class)
+    @JsonProperty("date_of_birth")
     private Date dateOfBirth;
     @XmlElement(name = "primary_address")
+    @JsonProperty("primary_address")
     private Addresses address;
     @XmlTransient
+    @JsonIgnore
     private AgeGroup ageGroup;
     @XmlElement(name = "age_group")
+    @JsonProperty("age_group")
     private AgeGroupAdapter ageGroupAdapter;
 
     public Integer getMemberId() { return memberId; }

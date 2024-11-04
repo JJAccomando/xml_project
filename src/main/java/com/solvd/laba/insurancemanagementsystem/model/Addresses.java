@@ -1,21 +1,31 @@
 package com.solvd.laba.insurancemanagementsystem.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "address")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Addresses {
     @XmlAttribute(name = "id")
+    @JsonProperty("id")
     private Integer addressId;
     @XmlElement(name = "building_number")
+    @JsonProperty("building_number")
     private Integer buildingNum;
     @XmlElement(name = "unit_number")
+    @JsonProperty("unit_number")
     private String unitNum;
+    @JsonProperty("street")
     private String street;
+    @JsonProperty("city")
     private String city;
+    @JsonProperty("state")
     private String state;
+    @JsonProperty("country")
     private String country;
     @XmlElement(name = "postal_code")
+    @JsonProperty("postal_code")
     private String postalCode;
 
     public Integer getAddressId() { return addressId; }
