@@ -13,7 +13,7 @@ public class JacksonParser {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("insurance_management_system.json"), lists);
+            objectMapper.writeValue(new File("src/main/resources/insurance_management_system.json"), lists);
         } catch (IOException e) {
             e.printStackTrace();
         }

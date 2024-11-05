@@ -87,7 +87,21 @@ public class DAOTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        checkXML(new File("insurance_management_system.xml"));
+        checkXML(new File("src/main/resources/insurance_management_system.xml"));
+        checkJson(new File("src/main/resources/insurance_management_system.json"));
+    }
+
+    public void checkJson(File file) {
+        InsuranceManagementSystem system = new InsuranceManagementSystem();
+        try {
+            system = JacksonParser.read(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Assert.assertEquals("Members must match", system.getMembersList(), MEMBERS);
+        Assert.assertEquals("Agents must match", system.getAgentList(), AGENTS);
+        Assert.assertEquals("Banking Information must match", system.getBankingInformationList(), BANKING_INFORMATION);
+        Assert.assertEquals("Policies must match", system.getPolicyTypeList(), POLICY_TYPES);
     }
 
     private void checkXML(File file) {
@@ -97,7 +111,7 @@ public class DAOTest {
             factory.setNamespaceAware(true);
             factory.setValidating(false);
             SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = schemaFactory.newSchema(new File("insurance_management_system.xsd"));
+            Schema schema = schemaFactory.newSchema(new File("src/main/resources/insurance_management_system.xsd"));
             factory.setSchema(schema);
             SAXParser parser = factory.newSAXParser();
             parser.parse(file, handler);

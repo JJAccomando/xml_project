@@ -21,7 +21,7 @@ public class InsuranceManagementSystem {
     @JsonProperty("banking_information")
     private List<BankingInformation> bankingInformationList;
     @XmlElementWrapper(name = "policy_types")
-    @XmlElement(name = "policy_types")
+    @XmlElement(name = "policy_type")
     @JsonProperty("policy_type")
     private List<PolicyType> policyTypeList;
 

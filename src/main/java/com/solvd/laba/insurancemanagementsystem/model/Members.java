@@ -34,8 +34,11 @@ public class Members {
     private String phoneNum;
     @XmlElement(name = "date_of_birth")
     @XmlJavaTypeAdapter(DateAdapter.class)
-    @JsonProperty("date_of_birth")
+    @JsonIgnore
     private Date dateOfBirth;
+    @XmlTransient
+    @JsonProperty("date_of_birth")
+    private String dateOfBirthString;
     @XmlElement(name = "primary_address")
     @JsonProperty("primary_address")
     private Addresses address;
@@ -72,7 +75,18 @@ public class Members {
 
     public java.sql.Date getDateOfBirth() { return dateOfBirth; }
 
+    public String getDateOfBirthString() { return dateOfBirthString; }
+
+    public void setDateOfBirthString(String dateOfBirthString) {
+        this.dateOfBirthString = dateOfBirthString;
+        this.dateOfBirth = Date.valueOf(dateOfBirthString);
+        int age = calculateAge(this.getDateOfBirth());
+        this.ageGroup = determineAgeGroup(age);
+        this.ageGroupAdapter = new AgeGroupAdapter(ageGroup);
+    }
+
     public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirthString = dateOfBirth;
         this.dateOfBirth = Date.valueOf(dateOfBirth);
         int age = calculateAge(this.getDateOfBirth());
         this.ageGroup = determineAgeGroup(age);
